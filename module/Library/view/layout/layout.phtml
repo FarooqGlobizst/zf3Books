@@ -1,9 +1,13 @@
 <?= $this->doctype() ?>
-
+<?php
+    if(defined('RUNNING_FROM_ROOT')){
+        $this->plugin('basePath')->setBasePAth($this->basePath().'/public');
+    }
+?>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <?= $this->headTitle('ZF Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?= $this->headTitle('Library')->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?= $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
